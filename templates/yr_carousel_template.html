@@ -1,0 +1,160 @@
+<html>
+<style>
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body, html { 
+font-family: sans-serif;
+}
+
+.gallery {
+  background: #7a7a7a;
+}
+
+
+* big buttons, no circle */
+.flickity-prev-next-button {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: black;
+}
+.flickity-prev-next-button.no-svg {
+  color: black;
+}
+.flickity-prev-next-button:hover {
+  background: transparent;
+}
+/* hide disabled button */
+.flickity-prev-next-button:disabled {
+  display: none;
+}
+
+/* position dots in gallery */
+.flickity-page-dots {
+  bottom: 0px;
+}
+/* white circles */
+.flickity-page-dots .dot {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: transparent;
+  border: 2px solid white;
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: white;
+}
+
+.flickity-viewport {
+    transition: height 0.2s;
+}
+
+.gallery-cell {
+  width: 200px;
+  height: auto;
+  margin-right: 80px;
+  border-radius: 25px;
+  background: rgba(151, 192, 230, 0.4);
+}
+
+div.center-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+}
+
+b {
+ color: #7c303f;
+ font-size: 120%;
+}
+
+#sub {
+
+color: black;
+text-align: center;
+padding: 6px;
+font-size: 80%;
+}
+
+h1 {
+text-align: center;
+font-family: 'Montserrat', sans-serif;
+font-size: 200%;
+}
+
+.img-with-text {
+    text-align: justify;
+}
+
+.img-with-text img {
+    display: block;
+    margin: 0 auto;
+	 width: 80%;
+    padding-bottom: 10%;
+}
+
+.carousel {
+  height: 300px;
+  width: 700px;
+}
+
+/* cell inherit height from carousel */
+.carousel-cell {
+  height: 100%;
+}
+
+
+
+</style>
+<head>
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.css" media="screen">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.js">
+</script>
+</body>
+
+
+
+<!-- Flickity HTML init -->
+<div>
+<h1>Year Advisors</h1>
+<div class="main-gallery js-flickity"
+  data-flickity-options='{ "wrapAround": true, "freeScroll": true, "autoPlay": true, "imagesLoaded": "true" }'>
+
+
+  {% for staff in yr_array %}
+
+  <div class="gallery-cell">
+    <div class="center-wrap">
+    <div class="img-with-text">
+    <div style="text-align:center;"><b>{{staff.title}}</b></div><div id="sub">{{staff.name}}</div>
+    <img src="./staff-photos/{{staff.image}}" class="carousel-cell-image" alt="{{staff.name}}" />
+    </div>
+    </div>
+    </div>
+
+    {% endfor %}
+
+
+     
+</div>
+</div>
+</html>
+
+
+
+
+
