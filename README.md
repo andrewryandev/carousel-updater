@@ -17,3 +17,4 @@ The basics of the program are:
 5. The "Create & Send" button generates a HTML file using Jinja2 and the corresponding HTML template in /templates. A for loop iterates through the corresponding array and creates a cell in the carousel for each staff object. The HTML and image files are then sent to the webserver via SCP and replace the old carousel files. Before all this, on click the "Create & Send" button creates a window confirming the user action
 6. The image assets are then cleaned from /html/staff-photos directory ready for the next workflow to run
 
+###### *Please note that image assets must be 300x400 pixels*
