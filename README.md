@@ -1,7 +1,7 @@
 # carousel-updater
 A no-code UI written in Python to update a simple JavaScript image carousel for a public school
 
-
+![carousel-updater stages](carousel_updater.png)
 
 The purpose of the project was to allow non-technical staff at the school to update the staff image carousel elements on the school website due to frequent staff changes.
 I chose Python to write this in for the broad modules available and as a learning tool for myself.
